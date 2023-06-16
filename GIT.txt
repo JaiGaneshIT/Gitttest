@@ -1,0 +1,86 @@
+GIT ,Bitbucket ,mercurial, perforce
+
+Local       - local sys repository .cant share easy
+
+centerized   - used to work with group of works .,if server wents down it an issue
+distributed   - used wide of use ,bcoz it having centerized and local also 
+
+
+Install GIT
+
+Git commands starts with GIT 
+
+create Repo FILES
+
+git init .
+
+
+git config --global user.name "jai"
+git config --global user.email 'jaiyank0705@gamil.com'
+
+git config --list 
+
+{{Local repo files or Project
+
+Working repo   >tracking area
+
+git add > staging area
+
+git commit > repository  }}
+
+-----------------------------------------------------------------
+
+2) stage 
+
+git add file.txt
+
+git add --all  ,git add .
+
+git status  >>where exactly your files are there.
+
+git log >> tell you commit or not
+
+-------------------------------------------------------------------
+
+3) FINALLY 
+
+git commit -m   "this is firest commit"
+
+
+git diff        //comparsion b/w working Directory and staging area
+
+git diff --staged    //comparion b/w staged and working directory
+
+git diff --staged HEAD   //comparsion b/w local repos  and working Dir
+
+
+------------------------
+
+Sharing repository with TEAM
+
+Git is only local reppo   , so GitHub came
+
+create GITHUB accoount
+
+--------------------------------------------ACTIVITY HAND-ON----------pushing to github
+mkdir gitpro
+
+cd 
+
+cd gittest
+
+cat >file.txt
+this is text
+
+git status
+
+git log
+
+git add --all
+
+git commit -m "test"
+
+git push origin  (filename)
+
+---------------------------------------------------- 
+
