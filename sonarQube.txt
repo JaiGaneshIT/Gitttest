@@ -1,0 +1,49 @@
+checking bug free
+
+quality manage report
+
+
+components 3.
+
+sonarQuber server
+
+Rules
+Database
+Web Interface
+
+SONARScanner 
+ 
+ sourcecode
+
+port 9000.
+
+
+install git
+
+install mvn
+
+do built 
+
+check in console for bug result
+
+
+----------------------------------------Intergate with JEnkin
+
+create token in sonarq;ber
+
+in jenkin same install plugin sonarQscanner
+
+config sonarq cred
+
+
+Manage Jenkins  > config system 
+
+add name server
+
+ add url of server IP
+
+while build happen link will generate can take there
+
+now you re ready!
+
+

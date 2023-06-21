@@ -1,0 +1,44 @@
+DOCKER file creating from war file jfrog repository
+docker build -t builtapp        
+
+FROM  centos 
+             /openjdk - java installed based - for maven & jenkins
+             /alphine lightweight
+
+tags
+
+FROM node:alphine3.10   //numner is tag
+
+ RUN yum install net-tools
+
+     && ....                           //reduce multiple run commands it consump space
+
+ENV
+
+COPY ./home/app/
+
+EXPOSE 8080
+
+CMD ['node','server.js']    //overrideable
+ENTRYPOINT 
+
+ 
+
+
+------------------------   EXMPLE 2
+cd /etc/os-release
+
+vi DockerFile
+
+FROM debian
+RUN apt-get install net-tools && \
+   apt-get install updates -y            //two layers
+
+docker build -t nginxervr_name .
+
+------------------------- EXAMPLE 3  REAL TIME JAVA APP
+
+
+check in github docker file 
+
+then run build in jenkins

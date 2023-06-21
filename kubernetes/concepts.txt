@@ -1,0 +1,42 @@
+API server
+schedular
+kublet-controller      - replicasets maintain
+etcd
+
+
+pod contain only one container
+
+also have sidecar container  for logs collecting for kibana
+
+yml file components
+
+vi nginx.yml
+
+AppVersion:
+kind:pod
+metadata:
+ name :nginx
+   label:dev
+Spec:
+
+annotation : cni.projectcalico          //network type
+Pod 
+
+multicontainer ,pod network , pod life-cycle
+
+kubctl create -f nginx.yml
+
+kubctl get -o wide
+
+kubctl exec -it containerName bash      //login inside container
+
+kubctl exec -it containName -c containname bash
+
+--------------------------____________Replica Set
+
+for High avialablity kubernetes given replica sets
+
+
+spec:
+  replicas:3
+  selector

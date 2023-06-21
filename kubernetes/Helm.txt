@@ -1,0 +1,10 @@
+
+helm will do package with required File
+
+doployment.yml
+Configmap
+secret
+Imagepullsecret
+HPA
+service.yml
+

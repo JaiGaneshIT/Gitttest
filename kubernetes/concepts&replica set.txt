@@ -1,0 +1,97 @@
+API server
+schedular
+kublet-controller      - replicasets maintain
+etcd
+
+
+pod contain only one container
+
+also have sidecar container  for logs collecting for kibana
+
+yml file components
+
+vi nginx.yml
+
+AppVersion:
+kind:pod
+metadata:
+ name :nginx
+   label:dev
+Spec:
+
+annotation : cni.projectcalico          //network type
+Pod 
+
+multicontainer ,pod network , pod life-cycle
+
+kubectl create -f nginx.yml
+
+kubectl get -o wide
+
+kubectl exec -it containerName bash      //login inside container
+
+kubectl exec -it containName -c containname bash
+
+--------------------------____________Replica Set
+
+for High avialablity kubernetes given replica sets
+
+AppVersion:
+Kind:
+metadata:
+spec:
+  replicas:3
+  selector:
+    app:nginx   --> replica know thisto replica
+
+
+kubectl scale rc ngnix --replicas=5   //scale up
+
+kubectl scale rc ngnix --replicas=2  //scale down
+
+kubctl get rc   //check container replicas
+
+
+kubectl delete rc 
+
+kubectl get svc -n ngnix
+
+ 
+-------------------NodePort________-----------
+
+port 31000 for node port
+
+targetport :80
+metadata:
+   name:nodeser
+    labels:
+     app:ngnix-app
+spec:
+  ports:
+
+  - port:80
+   targetPort :80
+   nodePort:31007
+
+--------------______Deleteyaml file----__________
+
+kubectl delete svc namePod
+
+kubectl delete -f nodfile.yml
+
+kubectl get svc
+
+kubectl discribe svc COnname 
+
+
+__________-------------_____Load Balancer
+metadata:
+namespace:nginx-dev
+spec:
+ selector:
+  app:nginx-app-lb
+  type: loadBalancer
+  ports:
+    nodePort:31000
+    Port:80
+     targetPort: 80

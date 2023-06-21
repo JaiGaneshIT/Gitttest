@@ -1,0 +1,241 @@
+Jenkins
+
+create new project
+
+build 
+
+--------------------  
+
+>install git in jenkin server 
+
+2. give github > https...........
+
+3.git clone ...
+
+4. Install maven in jenkin server
+
+
+Build triggers
+
+schedule  : min hour DOM MON DOW CMD
+            00 00 * * *
+
+Poll SCM : if any changes in Git repo it will execute
+schedule : *  *  *  *  *
+
+1.add slave node it do the job and pass to jenkins master
+
+
+2.jenkin master pass to artifacts
+
+
+---------------------------Activity
+
+jenkins > add node > new node 
+
+2. name it
+
+3. add exex 10 
+4. add root directory   /opt
+
+lanuch agent connecting it master
+
+Internal Data directory
+/opt/jenkins
+remoting
+
+use websocket
+
+done
+
+NEXT:
+
+copy and run the code in slave system
+
+
+
+-------------------------------------------
+Github Webhook  
+
+by enabling the option:
+
+  Github inform to jenkins that it got changes that code is ready you can execute
+
+in GitHub webhook
+Payload URL:
+Enroll  the jenkin server ip in github with last /
+
+-------------------------------------------------------------
+
+Domain specfic language job  DSL job
+
+creating job using dsl job
+
+install plugin
+
+job('maven job'){
+decription('test')
+scm{
+  git('http:/......')
+
+  }
+
+ step{
+   maven{  
+  mavenInstallation('maven')
+     goals('-B -Dskkiptests clean Package')
+    }
+   maven {
+   mavenInstallation('maven')
+   goals('test')
+      }
+  }
+}
+
+create job
+
+>choose git
+
+> local file system
+
+> root file directory
+
+--------------------------------------PIPELINE ---------------------------
+Install pipeline plugin
+
+pipeline , pipeline maven 
+
+Declarative pipeline  .1
+ 
+scripted pipeline  .2  required Ruby ,python
+
+scriped 
+
+node{  //groovy dcript
+
+}
+
+
+Declarative script
+
+ Pipeline {
+   agent any
+   stages {
+    
+      stage('Build'){
+          steps{
+            echo "this is test"
+               }
+     }
+}
+   stages {
+    
+      stage('test'){
+          steps{
+            echo "this is test"
+               }
+        }
+  stages {
+    
+      stage('Deploy'){
+          steps{
+            echo "this is test"
+               }
+        }
+   }
+
+
+}
+
+
+EXAMPLE 2
+
+pipeline {
+   agent any
+
+    enviorment  {
+      NAME = 'JAI'
+      LAST NAME = "GANESH"
+  }
+     stages{
+       stage ('build'){
+          step {
+              sh '$NAME $LAST NAME'
+          }
+     }
+  }
+    stages{
+       step("timeout"){
+            retry(3){
+             sh'this won't work with out command'
+                sh 'ls -ah'
+
+    
+
+     }
+             timeout (time:3 , unit: 'second')
+              sh 'sleedsf error'            
+      }
+
+ }
+}
+
+
+
+EXAMPLE 3 
+after testing ...
+
+post {
+      always{
+          echo "it will get executed"                    //default to execut everytime
+       
+      }
+       success{
+            echo "this is success"
+           
+     }
+      failure{
+            echo "this is failure"
+           
+     }
+       unstable{
+            echo "this is not stable"
+           
+     }
+}
+
+
+EXAMPE 4
+
+pipeline
+   agent any
+     stages{
+      stage ('compile stage'){
+            steps{
+           withMaven(maven : 'maven'){
+                sh 'mvn clean compile'
+            }
+
+                }
+      }
+           stage ('testing stage'){
+            steps{
+           withMaven(maven : 'maven'){
+                sh 'mvn test'
+            }
+
+                }
+      }
+
+         stage ('Deployment Stage'){
+            steps{
+           withMaven(maven : 'maven'){
+                sh 'mvn Deploy'
+            }
+
+                }
+      }
+   }
+
+---------------------------------------- Artifactory with JENKINS
+

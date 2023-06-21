@@ -1,0 +1,86 @@
+stateless container - not need any data can delete 
+
+statefull container - contains data neccessary volume to store
+
+
+temparory volume  ------------------------CONTAINER CREATES
+
+/var/lib/docker 
+
+create img
+
+df -h
+
+
+forcefull delete 
+
+rm -f 32d4443 
+
+container storage shared from DOCKER
+
+/var/lib/docker/overlay2/containerId
+
+-------________________------------Bind Volume 
+
+>docker run -it --name ngxserver -v /data nginx /bin/bash 
+
+> docker volume ls
+ local        qdwe123r4tf4t435
+
+REMOVE container
+
+docker rm -f qw1c12e
+
+
+___________-------------------_____________ATTACHING VOLUME to ANOTHER container
+
+>docker run -it --name ngixser2 -v qdwe123r4tf4t435:/data nginx /bin/bash
+
+cd /data
+
+df -h
+
+ls -ltr          //you can see files
+
+
+
+-----______ mounting Existing vOLUME to CONTAINER
+
+>docker run -it --name ngixser2 -v qdwe123r4tf4t435:/data1 nginx /bin/bas
+
+
+-------______ NAME to VOLUME
+
+docker run -it --name servnginx -v fir_container_name:/data1 nginx /bin/bash
+
+docker inspect fir_container_name
+
+docker volume create vol_create_withoutMount
+
+MOUNTing MULTIPLE -----------------------
+
+>docker run -it --name server -v vol_create_w...:/data3 nginx /bin/bash
+>docker run -it --name server -v vol_create_w...:/data3 -v secvolumeName:/data6 nginx /bin/bash
+
+---------_______ VOLUME SIZE______________-----------------
+
+>docker volume create --opt o=size=100m COntainer_name        //chck ingoogle
+
+
+
+------______ MOUNTING Data with Volume 
+
+docker run -it --name nginx_mout -v /root/filepath/:/usr/share/nginx/html nginx /bin/bash
+
+//mounted file inside the ngnix container
+
+
+
+----------------- MOUNTIGN WITH PORT NUMBER
+
+docker run -it --name nginx_mout -p 8074:80 -v /root/filepath/:/usr/share/nginx/html nginx /bin/bash
+
+
+/etc/init.d/nginx start
+/etc/init.d nginx status
+

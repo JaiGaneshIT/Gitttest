@@ -1,0 +1,129 @@
+configuration management system
+
+sequence code execute
+
+human readable
+
+App deployment
+configuration
+Orchestration
+configuration
+Agentless
+use SSH
+
+Efficient > less resource consume , opensource , control all OS .
+
+master or {control node} should be in Linux
+
+systems > Inventory  
+
+playbooks  > scripts giving instructions to do!
+
+Modules   > pre-defined liberies
+
+
+----------------------------------------
+add sudoers file
+
+generate ssh keys
+
+enable password based login
+
+install ansible
+
+
+copy paste authorized key in
+
+>.ssh
+
+vi authorized_keys
+paste
+
+
+multinode config
+
+create user
+visudo 
+
+ansiadmin ALL=(ALL)  NOPASSWD: ALL
+
+vi /etc/ssh/sshd_config
+
+passwordAuthenication yes
+
+service sshd reload
+
+ansible server copy ssh pub                        //same region we can use private else use public key
+.ssh > id_rsa.pub
+
+
+paste in target sys 
+
+ssh-copy-id
+
+ssh-copy-id ansadmin@172.5.3.2.ec2
+
+
+--------------------------------------------------
+
+ansible.cfg hosts roles
+
+vi hosts
+172.13
+172.14....
+
+ansible all -m ping    // to check all systems communicate or not
+
+ssh -i .ssh/id_rsa admin@172...
+
+
+
+-------------------------
+command
+
+ansible all -m command -a 'uptime'
+
+
+ansible all -m command -a 'ls -a'
+
+
+ansible all -m command -a 'touch file.txt'
+
+---------------------------- STAT
+
+ansible all -m stat 'path=/home/admin/download/file'
+
+----------------------------YUM
+ansible all -m yum -a 'name=git' -b   // b for sudo
+
+----------------------------USER
+
+ansible all -m user -a 'user=jai' -b
+
+----------------------------SETUP
+
+ansible all -m setup                //system info to control node
+
+-----------------------------
+
+edit ansible.cfg
+
+inventory = /etc/ansible/hosts    // default inventory  change to directory
+
+
+fork = 20    //execute files and commands at a time 
+
+
+--------------------------------File EXECUTE order
+
+ansible.cfg
+.ansible.cfg
+etc/ansible/ansible.cfg
+
+
+
+
+
+
+
+

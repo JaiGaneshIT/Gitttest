@@ -1,0 +1,50 @@
+
+
+Packages
+-----------------------------------INSTALLING APP & MAKING CONTAINER IMAGE WITH TAGS
+yum install tree
+
+yum install ip-utilis
+yum install net-tools
+
+apt-get install iputils-ping
+service docker status
+
+
+docker commit 23ed23r GiveImagename:v1      //saving in local repo and given name & Tags as version
+
+in image > /etc/init.d/nginx status
+
+
+docker images
+
+
+-------------------------------------------------Jenkins CI
+
+create a Jar/war  ---> create a docker Image ----> push to jfrog Repository
+
+docker push (your company provide private repository azure or jfrog or acs)
+-------------------------------------------------Jenkins 
+
+docker network ls
+Docker inspect network
+
+______________________-------------------___________DOCKER NETWORKING
+
+docker network create --driver=bridge --subnet=192.169.0.1/16 192net
+
+--ip-range=172......./24 --gateway-172.....254 172network
+
+//create img with network
+
+docker run -it --name nginxserver --network 192net -p 8003:80 ngnix bash
+
+
+----------------------------------------------------------ASSIGNING IP to container
+
+docker run -it --name nginxser2 -p 6000:80 --ip 172.3... --network 172network nginx bash
+
+
+
+
+

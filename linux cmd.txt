@@ -1,0 +1,7 @@
+to change hostname in linux
+
+vi /etc/hostname
+
+cd /opt/apache.tomcat
+
+./start.sh

@@ -1,0 +1,84 @@
+Docker useless for stateless
+
+if require volume should create
+
+
+URL --> API gateway  --->container
+
+
+>yum install docker
+
+>docker image  
+
+-----------------------------------------------------
+docker ps
+
+docker run -it centos /bin/bash   ( -interactive terminal )
+
+docker run -d -t imagename shell (detached)
+
+ps -ef     //process 
+
+ps -ef | wc -l    // count process
+
+
+docker run -d -t centos /bin/bash    //pull image
+
+--------------Login to container  EDITING------------------------------------
+
+docker exec -it 323q1e21ecd32 /bin/bash
+
+cd /usr/share/nginx
+
+/etc/init.d/nginx restart
+
+ctrl + pq
+--------------------------------------------stop or start container
+
+docker stop 23r24f34rf4
+docker start 43ft4g54gt45
+
+--------------------------------------------NAME to CONTAINER
+
+docker run -d -t --name nignixserver nignix
+docker run -d -t --name nginxserver1 nginx --hostname ngix
+
+--------------------------------------------Remove CONTAINER
+docker stop 43243r5543 
+
+docker rm 23rt3ft4tf4 43f6536gy5
+
+--------------------------------------------PORT FORWARDING
+assigning different ports for containers 
+
+for one container = accessing site using http://
+
+for lot of container    // using portforwarding 
+
+docker run -d -t --name nginxserver nginx -p 8080:80  //any range 34565  {postport:internal port}
+
+docker run -d -t --name nginxserver nginx -p 8081:80
+
+docker run -d -t --name nginxserver nginx -p 8082:80
+
+------------------------------------------------- PUSHING IMAGE TO DOCKER REPOSITORY
+
+install httpd application in the container 
+
+docker ps 
+
+1wdfd
+
+docker commit imagename 1wdfd/httpd dockeridname/ImagenametoStoreD
+
+docker images
+
+docker login
+
+username:
+password :                                   //docker repo cred
+
+docker push dockeridname/ImagenametoStoreD
+
+
+

@@ -1,0 +1,122 @@
+Maven note
+
+how to use
+
+Activites of Devops Engineer 
+
+Built Project
+
+Setup and Intergration with Jenkins
+--------------------------------------------------
+
+ archifact --> outcome of sourcecode
+
+Dependencies - build - Unit Test - Deploy
+
+---------------------------------------------
+
+install Java , Eclipse 
+
+maven project
+M Coordinate
+default Directory structure
+built 1st maven file
+
+
+-----------------------------------------------
+
+Group ID : organisation ID may same
+
+Archetype ID ; Unique ID
+
+
+main/java  , test/java
+
+
+-----------------------
+build application
+
+complie the source ccccode
+
+1) app.java  > app.class
+
+2) run tests
+
+3) built file
+
+
+project -> Rus as -> maven project 
+
+goals
+
+clean
+validate
+compile
+test-compile
+verify
+install
+deploy
+
+use >> clean Install
+
+pom.xml > contains values,configs,default,depandies
+
+for project Depandency required., for that Depandency transitive depandency is requred
+
+required package pull form Maven repository centrall
+
+
+---------------------------------------in Linux
+.m2 is directory
+
+pull git 
+
+mvn validate
+
+no target directory ?
+
+>compile   //execute
+
+>mvn package
+
+>mvn install
+
+
+find / -name .m2
+
+
+
+Enterprise Repository > secure to use
+
+
+
+pom.xml  -> main file store all details Group ID, Dependies
+
+
+
+-------------------Install jenkins
+
+Add plugins Maven Invoker, maven Integration
+
+add node > add maven server to jenkin
+
+add git repo in jenkin as well 
+
+new item > new project  >paste git link
+
+go for global config .
+
+connect the maven server
+
+jenkin integrated with maven server
+
+in jenkin build will effect in maven server
+
+
+------------------------ jenkin is intergration tool
+
+add git repo  =jenkin will builtin  maven server with maven intergated
+
+
+
+

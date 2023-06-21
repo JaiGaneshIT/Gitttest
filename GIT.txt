@@ -53,7 +53,7 @@ git diff --staged    //comparion b/w staged and working directory
 
 git diff --staged HEAD   //comparsion b/w local repos  and working Dir
 
-
+git diff HEAD HEAD~1 , 2 ...
 ------------------------
 
 Sharing repository with TEAM
@@ -65,6 +65,9 @@ create GITHUB accoount
 --------------------------------------------ACTIVITY HAND-ON----------pushing to github
 mkdir gitpro
 
+Git clone https://...
+
+git pull
 cd 
 
 cd gittest
@@ -82,5 +85,147 @@ git commit -m "test"
 
 git push origin  (filename)
 
+git remote add origin https.......
+
 ---------------------------------------------------- 
 
+Enable ssh
+
+copy the system  public ssh key and paste in Git hub
+
+cat /root/.ssh/rsa.pub
+
+copy and add in github
+
+ssh-keygen
+
+/root/.ssh/id_rsa
+
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/is_rsa
+
+-------------------------------------------------------
+
+if local repo origin not communicate with repos
+
+git remote add origin git@github...
+
+
+--------------------------------------------------------
+
+git show HEAD~2
+GIT show commit id 33ff4w34vg345vb43b
+
+git annotate filename
+
+git checkout commit id   //go previous version
+
+
+in git go inside file >> blame       //to see who did changes
+
+git branch    //checking branchs
+
+do changes
+
+commit it
+
+do pull request >
+
+to give perimission  do colabrate request   //for team use
+
+creating protecting Branches >
+
+git branch main      //create a branches
+
+git checkout commit Id   //to go previous version
+
+git checkout branchname   //change to another branch
+
+git merge branchname     //merge the branches
+
+-----------------------------------------------------------------
+
+fork repository
+
+copy repo file to your repo
+
+go for another ID give fork > it copy to our ID
+
+---------------------------------------
+
+git tag v1.0 
+
+git push origin v1.0
+
+git tag -a v1.1 commit id -m ''
+
+git restore filename*     //revert changes
+
+rm -rf file1    //remove file
+
+git restore filename*
+
+GIt local repo reset to one commit back-----------------------------
+
+git reset HEAD^1
+
+-------------------------------------------------------------.gitignore
+
+git .gitignore
+
+vi .gitignore.txt
+
+target\*
+.filename 
+
+
+git add .
+
+git push -u origin main
+------------------------------------- squash
+merge the several commits in 1
+
+Git rebase -i HEAD~2   
+
+-------------------------------------- 
+
+git fetch + git merge = git pull
+
+----------------------------------------Devops Engineer Role Real-time project
+
+create a privite repository
+
+create 3 Branches (prod ,UAT , Dev)
+
+Add team as COLLABORATORS to this repos
+
+Enable SSH based Authenication
+
+protect PRODUCTION and UAT branches
+
+1 approval needed to chek-on code on UAT and 2 Approvals needed to check-on code on to Production
+
+Build and Seploy should be successfull before check-in the code onto UAT as and PRODUCTION
+
+
+-----------------------------------------------------------------------------
+
+Activity
+
+1)creating 3 Branches in Github 
+  make dev default branch and delete master branch
+
+2) add rule to protect branches > in pro account only work
+
+3)now pull code in jenkins to build and execute in tomcat server
+
+4) if code works merge code from DEV to UAT  with approve from senior
+
+5)finally build from UAT and put in Jenkins build it and execute in Tomcat UAT
+
+
+
+tomcat.com:8080/webapp
+
+
+---END---------  

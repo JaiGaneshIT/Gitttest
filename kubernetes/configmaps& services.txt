@@ -1,0 +1,27 @@
+configmap
+
+properties of application
+
+should have details of port no, name ,sevice 
+
+with are present in configMaps
+
+Namespace:set of objects are created for process under namespace------
+
+namespace -> MainFIleName  Runs promethus,Grafana ,kibana and EFS
+
+--------_______-------expose to public
+
+ClusterIP : internally accessable
+
+kubectl describe svc -n nginx-dev
+
+selector: app=nginx   * same name should be
+
+-------________CONFIG MAP
+
+give database details for app in configMaps  
+
+kubectl get cm  
+
+should be in same NameSpace

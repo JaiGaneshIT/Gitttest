@@ -1,0 +1,14 @@
+Continue Intergration CI
+
+Git clone
+
+build 
+
+push to artifactory 
+
+
+
+Continue Delivery - CD
+
+create Docker FIle
+in GIT HUB

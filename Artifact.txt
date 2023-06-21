@@ -1,0 +1,29 @@
+Artifact = outcome of source code
+
+java outcome
+
+.jar , .war , .ear , .net , .exe 
+
+
+integrate maven with jfrog  to receive outcome
+
+add maven user in jfrog 
+
+config in maven server server.xml in home directory
+
+config jfrog repo in setting.xml in maven server
+
+
+
+1) maven pull from artifact repository
+
+1. fast
+
+2. multiple project can use
+
+3. structure maintain
+
+4. secure then internet authorize libaries used
+
+5. version maintain
+
